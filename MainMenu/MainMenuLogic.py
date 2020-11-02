@@ -1,6 +1,7 @@
 from MainMenu.MainMenuGui import MainMenuGui
 from TextFromConsole.TextFromConsoleLogic import TextFromConsoleLogic
 from Compression.ConvertToBinary import ConvertToBinary
+from Compression.CompressionLZ78 import CompressionLZ78
 
 
 class MainMenuLogic(MainMenuGui, TextFromConsoleLogic):
@@ -11,4 +12,6 @@ class MainMenuLogic(MainMenuGui, TextFromConsoleLogic):
         decision = input("\n Choice option: ")
 
         if decision == 1:
-            ConvertToBinary.convert_data_from_string_to_binary(input("Input text which you want compress: "))
+            # ConvertToBinary.convert_data_from_string_to_binary(input("Input text which you want compress: "))
+            CompressionLZ78(
+                ConvertToBinary.convert_data_from_string_to_binary(input("Input text which you want compress: ")))
