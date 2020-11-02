@@ -1,6 +1,6 @@
 import time
 
-from Compression.ConvertToBinary import ConvertToBinary
+import Compression.ConvertToBinary
 
 # x = open('OjciecChrzestny.txt', 'r', encoding='utf-16')
 # data_for_convert = x.read()
@@ -23,7 +23,7 @@ class FormatConvertedBin:
 def convert_data_from_string_to_binary_test():
     format_converted_bin = FormatConvertedBin()
 
-    result = ConvertToBinary.convert_data_from_string_to_binary(data_for_convert)
+    result = Compression.ConvertToBinary.convert_data_from_string_to_binary(data_for_convert)
     result_1 = format_converted_bin.my_bin_converter(data_for_convert)
 
     # print('Time bin solution: ', compression_lz78.diff)

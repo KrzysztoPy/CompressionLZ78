@@ -1,7 +1,7 @@
-from Compression.ConvertToBinary import CompressionLZ78
+import Compression.ConvertToBinary
 
 
-class TextFromConsoleLogic(CompressionLZ78):
+class TextFromConsoleLogic:
     # Get text
     # compression text
     # give result

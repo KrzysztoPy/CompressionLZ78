@@ -1,17 +1,24 @@
 from MainMenu.MainMenuGui import MainMenuGui
 from TextFromConsole.TextFromConsoleLogic import TextFromConsoleLogic
-from Compression.ConvertToBinary import ConvertToBinary
+import Compression.ConvertToBinary
+# import Compression.ConvertToBinary
 from Compression.CompressionLZ78 import CompressionLZ78
 
 
-class MainMenuLogic(MainMenuGui, TextFromConsoleLogic):
-    actual_load_file = MainMenuGui.nothing_load()
+class MainMenuLogic(TextFromConsoleLogic):
+    main_menu_gui = MainMenuGui()
+    actual_load_file = main_menu_gui.nothing_load()
 
     def menu_lo(self):
-        MainMenuGui.option_menu_gui()
+        self.main_menu_gui.option_menu_gui()
         decision = input("\n Choice option: ")
 
         if decision == 1:
-            # ConvertToBinary.convert_data_from_string_to_binary(input("Input text which you want compress: "))
-            CompressionLZ78(
-                ConvertToBinary.convert_data_from_string_to_binary(input("Input text which you want compress: ")))
+            Compression.ConvertToBinary.convert_data_from_string_to_binary(
+                input("Input text which you want compress: "))
+            # CompressionLZ78(
+            #     ConvertToBinary.convert_data_from_string_to_binary(input("Input text which you want compress: ")))
+
+
+main_menu = MainMenuLogic()
+main_menu.menu_lo()
