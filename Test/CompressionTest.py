@@ -34,4 +34,4 @@ def convert_data_from_string_to_binary_test():
     assert result == result_1
 
 
-convert_data_from_string_to_binary_test()
+# convert_data_from_string_to_binary_test()

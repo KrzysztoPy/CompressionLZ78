@@ -1,6 +1,5 @@
 class MainMenuGui:
-    AVAILABLE_ACTION = ('Input text from console.', 'Give path to file.', 'Exit.')
-    bla = ['a', 'b', 'c']
+    AVAILABLE_ACTION = ('Input text from console.', 'Give path to file.', 'Decompression', 'Exit.')
     empty_path = 'Actual load path: Empty'
 
     def nothing_load(self):
