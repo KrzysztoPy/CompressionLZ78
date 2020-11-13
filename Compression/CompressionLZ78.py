@@ -1,4 +1,6 @@
 from _collections import OrderedDict
+import time
+from MainMenu.MainMenuGui import MainMenuGui
 
 
 def compression_lz78_dict(check_input_data_for_convert):
@@ -7,16 +9,17 @@ def compression_lz78_dict(check_input_data_for_convert):
     dictionary_dict = dict()
     output = list()
     check_input = ''
-
+    print(check_input_data_for_convert.__len__())
+    start_time = time.time()
     for i in range(0, check_input_data_for_convert.__len__()):
         check_input += check_input_data_for_convert[i]
         # dictionary_dict empty
-        if dictionary_dict.__len__() == 0:
-            dictionary_dict[dictionary_dict.__len__()] = check_input
-            output.append((check_input, ZERO))
-            check_input = ''
+        # if dictionary_dict.__len__() == 0:
+        #     dictionary_dict[dictionary_dict.__len__()] = check_input
+        #     output.append((check_input, ZERO))
+        #     check_input = ''
         # if in dictionary not exist such value
-        elif check_input not in dictionary_dict.values():
+        if check_input not in dictionary_dict.values():
             # which have remembered value
             if position is None:
                 dictionary_dict[dictionary_dict.__len__()] = check_input
@@ -35,5 +38,8 @@ def compression_lz78_dict(check_input_data_for_convert):
             elif i == check_input_data_for_convert.__len__() - 1:
                 output.append((check_input, ZERO))
 
-    # decompression_lz78(output, dictionary_dict)
+    print("--- %s seconds ---" % (time.time() - start_time))
+    print("Output len: ", output.__len__())
+    print("Dict len: ", dictionary_dict.__len__())
+    MainMenuGui.compression_complete_gui()
     return output, dictionary_dict

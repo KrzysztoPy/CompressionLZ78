@@ -6,9 +6,8 @@ sample = 'A'
 
 
 def compression_lz78_test():
-    result = CompressionLZ78.compression_lz78_dict(ConvertToBinary.convert_data_from_string_to_binary(sample))
+    result = CompressionLZ78.compression_lz78_dict(ConvertToBinary.convert_data_from_string_to_binary(sample), None)
+    print(result)
 
 
 compression_lz78_test()
-
-
