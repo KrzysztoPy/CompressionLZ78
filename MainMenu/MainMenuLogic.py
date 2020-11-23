@@ -1,4 +1,4 @@
-from MainMenu.MainMenuGui import MainMenuGui
+import MainMenu.MainMenuGui as MainMenuGui
 import Decompression.ConvertDataToListAndDict as ConvertToListAndDict
 import Compression.CompressionLZ78 as CompressionLZ78
 import OperationOnFile.OperationOnFile as OperationOnFile
@@ -6,26 +6,25 @@ import Decompression.Decompression_LZ78 as Decompression
 
 
 class MainMenuLogic:
-    main_menu_gui = MainMenuGui()
 
     def menu_lo(self):
         while True:
-            self.main_menu_gui.option_menu_gui()
+            MainMenuGui.option_menu_gui()
             decision = input("\n Choice option: ")
 
             if decision == '1':
                 output_data, dictionary = CompressionLZ78.compression_lz78(
-                    input(self.main_menu_gui.give_text_gui()))
+                    input(MainMenuGui.give_text_gui()))
                 while True:
                     MainMenuGui.which_save_to_file_gui()
                     decision = input("\n Choice option: ")
                     if decision == '1':
                         OperationOnFile.save_file(MainMenuGui.enter_path_where_save_output_data_gui(), output_data,
                                                   MainMenuGui.file_name_output_txt_gui(),
-                                                  MainMenuGui.save_output_file_complete_gui)
+                                                  MainMenuGui.save_output_file_complete_gui())
                         OperationOnFile.save_file(MainMenuGui.enter_path_where_save_dictionary_data_gui(), dictionary,
                                                   MainMenuGui.file_name_dictionary_txt_gui(),
-                                                  MainMenuGui.save_dictionary_file_complete_gui)
+                                                  MainMenuGui.save_dictionary_file_complete_gui())
                         break
                     if decision == '2':
                         break

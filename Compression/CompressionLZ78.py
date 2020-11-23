@@ -1,4 +1,4 @@
-from MainMenu.MainMenuGui import MainMenuGui
+import MainMenu.MainMenuGui as MainMenuGui
 import Compression.ConvertDataToSave as ConvertDataToSave
 import time
 

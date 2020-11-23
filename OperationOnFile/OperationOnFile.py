@@ -1,4 +1,4 @@
-from MainMenu.MainMenuGui import MainMenuGui as MainMenuGui
+import MainMenu.MainMenuGui as MainMenuGui
 
 
 def save_file(answer, save_data, file_name, success_info):
