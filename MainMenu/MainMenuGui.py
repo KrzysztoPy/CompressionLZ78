@@ -1,45 +1,77 @@
 class MainMenuGui:
 
-    @staticmethod
+    @staticmethod  # is
     def give_text_gui():
         return 'Input text which you want compress: '
 
-    @staticmethod
-    def nothing_load():
-        return 'Actual load path: Empty'
-
-    @staticmethod
+    @staticmethod  # is
     def option_menu_gui():
         available_action = ('Input text from console.', 'Give path to file.', 'Decompression', 'Exit.')
 
-        print('\n', MainMenuGui.nothing_load(), '\n')
         for i, option in enumerate(available_action):
             print(i + 1, '.', option)
 
-    def actual_load_file_gui(self):
-        pass
-
-    @staticmethod
+    @staticmethod  # is
     def give_path_gui():
-        return '\nInput path to file which you want compress\nExample path: C:\\Desktop\\My File\\myTextFile.txt\nPath:'
+        return '\nInput path to file which you want compress Example path: C:\\Desktop\\My File\\myTextFile.txt\nPath:'
 
-    @staticmethod
-    def file_path_for_compressed_data_gui():
-        return '\nInput path when you want save compressed data.\nExample path: C:\\Desktop\\My File \n' \
+    @staticmethod  # is
+    def enter_path_where_save_output_data_gui():
+        return '\nInput path when you want save output data. Example path: C:\\Desktop\\My File \n' \
                'Skip file name and add a \\ character to the end\nPath:'
 
-    @staticmethod
-    def name_file_with_data_compressed_dictionary_gui():
-        return '\\dictionary.txt'
-
-    @staticmethod
-    def name_file_with_data_output_after_compressed_gui():
+    @staticmethod  # is
+    def file_name_output_txt_gui():
         return '\\output.txt'
 
-    @staticmethod
-    def compression_complete_gui():
-        print('\nCompression LZ78 complete!\n')
+    @staticmethod  # is
+    def save_output_file_complete_gui():
+        return '\nWriting output to file was successful!\n'
 
-    @staticmethod
-    def save_file_complete_gui():
-        return '\nSave the output and the dictionary as a txt file to the indicated location!'
+    @staticmethod  # is
+    def enter_path_where_save_dictionary_data_gui():
+        return '\nInput path when you want save dictionary data. Example path: C:\\Desktop\\My File \n' \
+               'Skip file name and add a \\ character to the end\nPath:'
+
+    @staticmethod  # is
+    def file_name_dictionary_txt_gui():
+        return '\\dictionary.txt'
+
+    @staticmethod  # is
+    def save_dictionary_file_complete_gui():
+        return '\nWriting dictionary to file was successful!\n'
+
+    @staticmethod  # is
+    def enter_path_where_save_decompressed_data_gui():
+        return '\nInput path when you want save decompressed data. Example path: C:\\Desktop\\My File \n' \
+               'Skip file name and add a \\ character to the end\nPath:'
+
+    @staticmethod  # is
+    def which_save_to_file_gui():
+        print('\nWant save output data and dictionary to file?\n 1.Yes \n 2.No')
+
+    @staticmethod  # is
+    def get_output_data_to_decompressed():
+        return '\nEnter path to output data to decompressed:\n'
+
+    @staticmethod  # is
+    def get_dictionary_data_to_decompressed():
+        return '\nEnter path to dictionary data to decompressed:\n'
+
+    @staticmethod  # is
+    def which_save_decompressed_file_gui():
+        print('\nWant save decompressed data to file?\n 1.Yes \n 2.No')
+
+    @staticmethod  # is
+    def file_name_decompressed_txt_gui():
+        return '\\decompressed.txt'
+
+    @staticmethod  # is
+    def save_decompressed_file_complete_gui():
+        return '\nWriting decompressed to file was successful!\n'
+
+    @staticmethod  # is
+    def compression_complete_gui():
+        return '\nCompression successful!\n'
+
+    # Ala ma kota, ma również i pieska. Raka też ma ale o tym nie wie.

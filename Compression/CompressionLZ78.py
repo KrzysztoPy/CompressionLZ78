@@ -1,24 +1,20 @@
-from _collections import OrderedDict
-import time
 from MainMenu.MainMenuGui import MainMenuGui
+import Compression.ConvertDataToSave as ConvertDataToSave
+import time
 
 
-def compression_lz78_dict(check_input_data_for_convert):
+def compression_lz78(check_input_data_for_convert):
     ZERO = None
     position = None
     dictionary_dict = dict()
     output = list()
     check_input = ''
-    print(check_input_data_for_convert.__len__())
+    # print(check_input_data_for_convert.__len__())
     start_time = time.time()
+    results = list()
     for i in range(0, check_input_data_for_convert.__len__()):
         check_input += check_input_data_for_convert[i]
         # dictionary_dict empty
-        # if dictionary_dict.__len__() == 0:
-        #     dictionary_dict[dictionary_dict.__len__()] = check_input
-        #     output.append((check_input, ZERO))
-        #     check_input = ''
-        # if in dictionary not exist such value
         if check_input not in dictionary_dict.values():
             # which have remembered value
             if position is None:
@@ -38,8 +34,10 @@ def compression_lz78_dict(check_input_data_for_convert):
             elif i == check_input_data_for_convert.__len__() - 1:
                 output.append((check_input, ZERO))
 
-    print("--- %s seconds ---" % (time.time() - start_time))
-    print("Output len: ", output.__len__())
-    print("Dict len: ", dictionary_dict.__len__())
+        # results.append(['Count: %s' % check_input_data_for_convert.__len__(),
+        #                 "--- %s seconds ---" % (time.time() - start_time),
+        #                 "Output len: %i" % output.__len__(),
+        #                 "Dict len: %i" % dictionary_dict.__len__()])
     MainMenuGui.compression_complete_gui()
+    output, dictionary_dict = ConvertDataToSave.convert_data_to_save(output, dictionary_dict)
     return output, dictionary_dict
