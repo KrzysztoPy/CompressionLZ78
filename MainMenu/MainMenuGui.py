@@ -70,6 +70,3 @@ def save_decompressed_file_complete_gui():
 
 def compression_complete_gui():
     return '\nCompression successful!\n'
-
-# Ala ma kota, ma również i pieska. Raka też ma ale o tym nie wie.
-#C:\Users\Kriss\Desktop\Testy LZ78
